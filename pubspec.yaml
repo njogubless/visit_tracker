@@ -24,6 +24,7 @@ dependencies:
   flutter_lints: ^5.0.0
   json_serializable: ^6.9.0
   riverpod_generator: ^2.6.3
+  build_runner: ^2.4.13
 
 dev_dependencies:
   flutter_test:
