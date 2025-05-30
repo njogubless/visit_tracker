@@ -6,6 +6,8 @@ import 'package:visit_tracker/Features/activities/domain/repository/acitvity_rep
 
 class ActivityRepositoryImpl implements ActivityRepository {
   final ActivityRemoteDataSource remoteDataSource;
+  @override
+  final String baseUrl = 'https://kqgbftwsodpttpqgqnbh.supabase.co/rest/v1/';
 
   ActivityRepositoryImpl(this.remoteDataSource);
 
@@ -19,7 +21,7 @@ class ActivityRepositoryImpl implements ActivityRepository {
   }
 
   @override
-  Future<Activity> createActivity(Activity activity) async {
+  Future<Activity> createActivity(dynamic activity) async {
     try {
       return await remoteDataSource.createActivity(activity);
     } catch (e) {

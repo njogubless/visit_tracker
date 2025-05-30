@@ -8,6 +8,14 @@ class VisitRepositoryImpl implements VisitRepository {
   final VisitRemoteDataSource _remoteDataSource;
   
   VisitRepositoryImpl(this._remoteDataSource);
+
+  @override
+  String get baseUrl => _remoteDataSource.baseUrl;
+
+  @override
+  Future<VisitStatistics> getStatistics() async {
+    return await getVisitStatistics();
+  }
   
   @override
   Future<List<Visit>> getVisits() async {

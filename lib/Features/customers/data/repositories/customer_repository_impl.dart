@@ -6,6 +6,9 @@ import 'package:visit_tracker/Features/customers/domain/repositories/customer_re
 class CustomerRepositoryImpl implements CustomerRepository {
   final CustomerRemoteDataSource _remoteDataSource;
 
+  @override
+  String get baseUrl => _remoteDataSource.baseUrl;
+
   CustomerRepositoryImpl(this._remoteDataSource);
 
   @override

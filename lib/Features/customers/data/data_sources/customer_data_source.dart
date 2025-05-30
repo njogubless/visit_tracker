@@ -7,12 +7,15 @@ abstract class CustomerRemoteDataSource {
   Future<Customer> createCustomer(Map<String, dynamic> customerData);
   Future<Customer> updateCustomer(int id, Map<String, dynamic> customerData);
   Future<void> deleteCustomer(int id);
+
+  String get baseUrl => 'https://kqgbftwsodpttpqgqnbh.supabase.co/rest/v1/';
 }
 
 class CustomerRemoteDataSourceImpl implements CustomerRemoteDataSource {
   final ApiClient _apiClient;
 
   CustomerRemoteDataSourceImpl(this._apiClient);
+  String get baseUrl => 'https://kqgbftwsodpttpqgqnbh.supabase.co/rest/v1/';
 
   @override
   Future<List<Customer>> getCustomers() async {
