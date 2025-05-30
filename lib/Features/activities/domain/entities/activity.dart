@@ -8,4 +8,20 @@ class Activity {
     required this.description,
     required this.createdAt,
   });
+
+  factory Activity.fromJson(Map<String, dynamic> json) {
+    return Activity(
+      id: json['id'] as int,
+      description: json['description'] as String,
+      createdAt: DateTime.parse(json['created_at'] as String),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'description': description,
+      'created_at': createdAt.toIso8601String(),
+    };
+  }
 }
