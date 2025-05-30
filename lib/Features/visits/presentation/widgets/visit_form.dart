@@ -20,7 +20,7 @@ class _VisitFormState extends ConsumerState<VisitForm> {
   int? _selectedCustomerId;
   DateTime _selectedDate = DateTime.now();
   String _selectedStatus = 'Pending';
-  Set<int> _selectedActivities = {};
+   final Set<int> _selectedActivities = {};
   bool _isLoading = false;
 
   final List<String> _statusOptions = ['Pending', 'Completed', 'Cancelled'];

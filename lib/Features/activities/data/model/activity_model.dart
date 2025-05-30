@@ -14,5 +14,6 @@ class ActivityModel extends Activity {
   factory ActivityModel.fromJson(Map<String, dynamic> json) =>
       _$ActivityModelFromJson(json);
   
+  @override
   Map<String, dynamic> toJson() => _$ActivityModelToJson(this);
 }
