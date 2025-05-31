@@ -36,8 +36,11 @@ dev_dependencies:
 
 
 flutter:
+assets:
+  - assets/visitstracker1.png
+  - assets/visitstracker2.png
 
  
-  uses-material-design: true
+uses-material-design: true
 
  

@@ -10,9 +10,13 @@ Visits Tracker is a sample Sales Force Automation (SFA) app designed for route-t
 ## 📱 Screenshots
 
 - Visits List Page with search and filter functionality
+![The visit page](assets/visitstracker3.png)
 - Add Visit Form with customer selection and activity tracking
+![The visit page](assets/visitstracker1.png)
 - Visit Statistics Dashboard with completion rates
+![The visit page](assets/visitstracker2.png)
 - Individual Visit Cards showing customer details and status
+![The visit page](assets/visitstracker4.png)
 
 ## 🏗️ Key Architectural Choices
 
