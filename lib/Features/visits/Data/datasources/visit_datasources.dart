@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:visit_tracker/Features/visits/Data/models/visit_model.dart';
+import 'package:visit_tracker/Features/visits/Domain/entities/visit.dart';
 import 'package:visit_tracker/core/constants/api_constants.dart';
 import 'package:visit_tracker/core/errors/failures.dart';
 import 'package:visit_tracker/core/network/api_client.dart';
@@ -48,7 +49,18 @@ class VisitRemoteDataSourceImpl implements VisitRemoteDataSource {
       
       final visits = data.map((json) {
         try {
-          return VisitModel.fromJson(json as Map<String, dynamic>);
+          // Use Visit.fromJson first, then convert to VisitModel
+          final visit = Visit.fromJson(json as Map<String, dynamic>);
+          return VisitModel(
+            id: visit.id,
+            customerId: visit.customerId,
+            visitDate: visit.visitDate,
+            status: visit.status,
+            location: visit.location,
+            notes: visit.notes,
+            activitiesDone: visit.activitiesDone,
+            createdAt: visit.createdAt,
+          );
         } catch (e) {
           print('❌ Error parsing visit: $e');
           print('🔍 Raw JSON: $json');
